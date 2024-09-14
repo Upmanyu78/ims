@@ -1,0 +1,342 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header */
+.header {
+    background-color: #E7E8D1;
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+    top: 0;           /* Ensures it's at the top */
+    left: 0;          /* Ensures it's aligned to the left */
+    width: 100%;      /* Makes sure the header spans the full width of the page */
+    z-index: 1000; 
+    position: fixed;    
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    margin-right: 15px;
+    margin-left: 10px; /* Reduced left margin for better responsiveness */
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.logo p {
+    margin: 0;
+    font-size: 14px;
+    font-family: 'Segoe Script';
+}
+
+/* Search Box */
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    padding: 10px;
+    width: 200px; /* Reduced width */
+    border: 4px solid #1995AD;
+    border-radius: 25px 0 0 25px;
+    outline: none;
+    transition: width 0.4s ease;  /* Smooth transition for width */
+}
+
+.search-input:focus {
+    width: 400px;  /* Expanded width when clicked */
+}
+
+.search-button {
+    background-color: #1995AD;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 16px;
+    border-radius: 0 25px 25px 0;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-button img {
+    width: 20px; 
+    height: 20px;
+}
+
+.search-button:hover {
+    background-color: #1995AD;
+}
+
+/* Profile Menu */
+.profile-menu img {
+    cursor: pointer;
+    border-radius: 50%;
+    max-width: max-content;
+    margin-right: 100px;
+}
+
+/* Dropdown Menu */
+.profile-dropdown {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 60px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.profile-dropdown a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.profile-dropdown a:hover {
+    background-color: #f8f9fa;
+}
+
+/* Welcome Section */
+.welcome-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #ffffff;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.welcome-section h2 {
+    margin: 0;
+    font-size: 22px;
+    justify-content: center;
+}
+
+.current-time p {
+    margin: 0;
+    font-size: 20px;
+    text-align: right;
+    color: black;
+}
+
+/* Notice Board */
+.notice-board-container {
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    border-color: #000000;
+    border-width: 3px;
+    margin: 10px 100px 100px 100px;
+    justify-content: center;
+}
+
+.notice-board {
+    width: 100%; /* Use percentage instead of fixed width */
+    background-color: #E7E8D1;
+    padding: 20px; /* Reduced padding for responsiveness */
+    padding-top: 0%;
+    padding-bottom: 10px;
+    border-radius: 30px;
+    border: 2px solid #2C5F2D;
+    box-shadow: 0 20px 30px #97BC62;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.notice-board:hover {
+    transform: scale(1.05);  /* Slightly enlarges the container */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);  /* Adds shadow on hover */
+}
+
+.notice-board h3 {
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: 'Segoe Script';
+    margin-bottom: 20px;
+    padding: 20px 100px;
+    background-color: #F98866;
+    border-radius: 20px;
+    border-top-left-radius: 0%;
+    border-top-right-radius: 0%;
+    display: inline-block;
+}
+
+@keyframes sparkle {
+    0% {
+        text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8), 
+                     0px 0px 20px rgba(255, 255, 255, 0.6), 
+                     0px 0px 30px rgba(255, 255, 255, 0.4);
+        color: #000000;  /* Bright yellow */
+    }
+    50% {
+        text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8), 
+                     0px 0px 20px rgba(255, 255, 255, 0.6), 
+                     0px 0px 30px rgba(255, 255, 255, 0.4);
+        color: #9c2929;  /* Bright cyan */
+    }
+    100% {
+        text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8), 
+                     0px 0px 20px rgba(255, 255, 255, 0.6), 
+                     0px 0px 30px rgba(255, 255, 255, 0.4);
+        color: #7c1838;  /* Back to bright yellow */
+    }
+}
+
+.sparkling-notice {
+    font-family: 'Segoe Script', cursive;
+    font-size: 1.8rem;  /* Adjust the size as needed */
+    animation: sparkle 5s infinite;  /* Runs the sparkle animation every 2 seconds infinitely */
+    padding: 20px;
+    background-color: #bbc737;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: fit-content;
+    margin: 0 auto;
+    text-align: center;
+    display: inline-block;
+}
+
+
+/* Notice Cards */
+.notice-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Ensures wrapping on smaller screens */
+}
+
+.notice-card {
+    background-color: #fff;
+    padding: 20px; /* Reduced padding */
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Take full width on smaller screens */
+    max-width: 300px; /* Max width for larger screens */
+    text-align: left;
+    border: 2px solid #2C5F2D;
+}
+
+.notice-card p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.notice-card button {
+    padding: 10px;
+    background-color: #000000;
+    color: white;
+    justify-content: center;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin-top: 10px;
+    width: 50%;
+}
+
+.notice-card button:hover {
+    background-color: #339472;
+}
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo img {
+        margin-left: 0;
+    }
+
+    .welcome-section {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .current-time p {
+        text-align: left;
+        margin-top: 10px;
+    }
+
+    .notice-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 10px;
+    }
+
+    .search-input {
+        width: 150px;
+    }
+
+    .welcome-section h2 {
+        font-size: 18px;
+    }
+
+    .current-time p {
+        font-size: 16px;
+    }
+
+    .notice-card {
+        padding: 15px;
+    }
+}
+
+.show-more-container {
+    text-align: center;
+    margin-top: 20px; /* Adjust the spacing between notices and button */
+    margin-bottom: 40px; /* Adjust spacing from the bottom */
+}
+
+.show-more-button {
+    background-color: #000000;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.show-more-button:hover {
+    background-color: #3a8b7b;
+}

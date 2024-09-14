@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <link rel="stylesheet" href="Signupstyle.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <img src="mmdu_logo.png" alt="MMDU Logo">
+            <h1>MMDU</h1>
+            <h2>INFORMATION MULTICAST SYSTEM</h2>
+        </div>
+        <div class="right-panel">
+            <div class="form-container">
+                <div class="toggle-buttons">
+                    <button class="toggle-btn1" id="loginBtn">Log in</button>
+                    <button class="toggle-btn2" id="signupBtn">Sign up</button>
+                </div>
+                <form id="signupForm" action="Dashboard.html" method="POST">
+                    <h3>Enter your details</h3>
+                    <select name="role" required>
+                        <option value="" disabled selected>Select role</option>
+                        <option value="student">Student</option>
+                        <option value="faculty">Faculty</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                    <input type="text" name="name" placeholder="Enter Name" required>
+                    <input type="text" name="roll" placeholder="Enter Roll No." required>
+                    <input type="password" name="password" placeholder="Enter Password" required>
+                    <button type="submit" class="signup-btn">Signup</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Toggle button for Login
+         // Handle form submission
+         document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevent the default form submission
+
+            // Get the values from the form fields
+            const role = document.querySelector('select[name="role"]').value;
+            const name = document.querySelector('input[name="name"]').value;
+            const roll = document.querySelector('input[name="roll"]').value;
+            const password = document.querySelector('input[name="password"]').value;
+
+            // Store the user data in localStorage
+            localStorage.setItem('role', role);
+            localStorage.setItem('name', name);
+            localStorage.setItem('roll', 11212821);
+            localStorage.setItem('password', 1234);
+
+            // Redirect to the dashboard page
+            window.location.href = 'Dashboard.html';
+        });
+
+
+    </script>
+</body>
+</html>

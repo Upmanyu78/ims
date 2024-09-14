@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - MMU IMS</title>
+    <link rel="stylesheet" href="Dashboard.css">
+</head>
+<body>
+    <div class="header">
+        <div class="menu-button" onclick="toggleSidebar()">&#9776;</div>
+        <div class="logo">
+            <img src="mmdu_logo.png" alt="MMU Logo" width="110" height="55">
+            <div class="logo-text">
+                <h1>MMU IMS</h1>
+                <p>Information Multicast System</p>
+            </div>
+            <!--<div class="page-container">
+                Sidebar 
+                <div id="sidebar" class="sidebar">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Dashboard</a></li>
+                        <li><a href="#">Notices</a></li>
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Settings</a></li>
+                        <li><a href="#">Logout</a></li>
+                    </ul>
+                </div>
+        </div>-->
+        <div class="container">
+            <!-- Search Form to Send Queries to Backend -->
+            <form action="/search" method="GET" class="search-form">
+                <input type="text" placeholder="Search..." name="query" class="search-input">
+                <button type="submit" class="search-button">
+                    <img src="Search.png" alt="search" style="width: 20px; height: 20px;">
+                </button>
+            </form>
+            <div class="profile-menu" onclick="toggleDropdown()">
+                <img src="profile.png" alt="Profile" width="30" height="30">
+            </div>
+        </div>
+        <div class="profile-dropdown" id="profileDropdown">
+            <a href="#">Profile</a>
+            <a href="#">Notifications</a>
+            <a href="#">Calendar</a>
+            <a href="#">Logout</a>
+        </div>
+    </div>
+
+    <div class="welcome-section">
+        <h2>Welcome, Aditya...👋</h2>
+        <div class="current-time">
+            <p id="current-date"></p>
+            <p id="current-time"></p>
+        </div>
+    </div>
+
+    <!-- Notice Board Container -->
+    <div class="notice-board-container">
+        <div class="notice-board">
+            <h3 class="sparkling-notice">Today's Notice</h3>
+            <div class="notice-container">
+                <div class="notice-card">
+                    <p><strong>Time - 12:16 PM</strong></p>
+                    <p>Description: About Inter-Hostel Volleyball Tournament</p>
+                    <p>From: Dean, Dept. of Student Welfare</p>
+                    <p>File attached: Notice1122289.pdf</p>
+                    <button>Open</button>
+                </div>
+                <div class="notice-card">
+                    <p><strong>Time - 14:25 PM</strong></p>
+                    <p>Description: Suspension order</p>
+                    <p>From: HOD, Dept. of Engineering</p>
+                    <p>File attached: Notice1122390.pdf</p>
+                    <button>Open</button>
+                </div>
+                <div class="notice-card">
+                    <p><strong>Time - 15:30 PM</strong></p>
+                    <p>Description: Btech Seasonal Examination</p>
+                    <p>From: HOD, Dept. of Engineering</p>
+                    <p>File attached: Notice1122391.pdf</p>
+                    <button>Open</button>
+                </div>
+                
+                </div>
+                <div class="show-more-container">
+                    <button class="show-more-button">Show More</button>
+                </div>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+
+</body>
+</html>
